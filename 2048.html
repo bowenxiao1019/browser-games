@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Classic puzzle</p>
+          <h1>2048</h1>
+          <p class="subtitle">
+            Combine matching tiles to reach 2048. Use your arrow keys or swipe.
+          </p>
+        </div>
+        <div class="scoreboard" aria-label="Game scores">
+          <div class="score-card">
+            <span class="score-label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="score-card">
+            <span class="score-label">Best</span>
+            <strong id="best-score">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="controls">
+        <button id="new-game" type="button">New Game</button>
+        <p id="status" class="status" aria-live="polite">
+          Merge tiles and keep the board alive.
+        </p>
+      </section>
+
+      <section class="board-shell">
+        <div
+          id="board"
+          class="board"
+          role="grid"
+          aria-label="2048 game board"
+        ></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

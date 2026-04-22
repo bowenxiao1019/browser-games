@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Games</title>
+    <style>
+      :root {
+        --bg: #0a1120;
+        --panel: rgba(10, 18, 32, 0.78);
+        --text: #f7f7f2;
+        --muted: #aeb9cc;
+        --accent: #ff8a5b;
+        --accent-2: #58f6ff;
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(88, 246, 255, 0.16), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(255, 138, 91, 0.18), transparent 30%),
+          linear-gradient(180deg, #050914 0%, #111d35 100%);
+      }
+
+      .shell {
+        width: min(100%, 920px);
+        padding: 28px;
+        border-radius: 32px;
+        background: var(--panel);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
+        backdrop-filter: blur(12px);
+      }
+
+      .hero {
+        margin-bottom: 26px;
+      }
+
+      .eyebrow,
+      .summary,
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .eyebrow {
+        margin-bottom: 10px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 8vw, 4.6rem);
+        line-height: 0.95;
+      }
+
+      .summary {
+        margin-top: 12px;
+        max-width: 42rem;
+        line-height: 1.6;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        padding: 24px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .card-2048 {
+        background:
+          linear-gradient(145deg, rgba(255, 233, 206, 0.18), rgba(255, 188, 133, 0.08)),
+          rgba(255, 255, 255, 0.06);
+      }
+
+      .card-race {
+        background:
+          linear-gradient(145deg, rgba(88, 246, 255, 0.14), rgba(77, 97, 255, 0.08)),
+          rgba(255, 255, 255, 0.06);
+      }
+
+      .tag {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #07111f;
+        background: linear-gradient(135deg, var(--accent-2), #a5ffcf);
+      }
+
+      .card-2048 .tag {
+        background: linear-gradient(135deg, #ffd29c, #ff8a5b);
+      }
+
+      .card p {
+        margin-top: 10px;
+        line-height: 1.55;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 18px;
+        flex-wrap: wrap;
+      }
+
+      a.button {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        color: #04101c;
+        background: linear-gradient(135deg, var(--accent-2), #8dffbe);
+      }
+
+      .card-2048 a.button {
+        background: linear-gradient(135deg, #ffd29c, #ff8a5b);
+      }
+
+      .note {
+        margin-top: 22px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 760px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .shell {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Game hub</p>
+        <h1>Pick a game and play instantly</h1>
+        <p class="summary">
+          This page is the one you share. Friends can open it in any browser and
+          jump straight into either a puzzle challenge or an arcade race.
+        </p>
+      </section>
+
+      <section class="grid" aria-label="Games">
+        <article class="card card-2048">
+          <span class="tag">Puzzle</span>
+          <h2>2048</h2>
+          <p>
+            Slide and merge matching tiles until you hit 2048. Fast rounds,
+            simple controls, and great on desktop or phone.
+          </p>
+          <div class="actions">
+            <a class="button" href="2048.html">Play 2048</a>
+          </div>
+        </article>
+
+        <article class="card card-race">
+          <span class="tag">Arcade</span>
+          <h2>Neon Sprint</h2>
+          <p>
+            Dodge traffic, switch lanes, and survive as speed ramps up. Built
+            for quick reflexes and high-score chasing.
+          </p>
+          <div class="actions">
+            <a class="button" href="race.html">Play Neon Sprint</a>
+          </div>
+        </article>
+      </section>
+
+      <p class="note">
+        Tip: after publishing, this homepage becomes your single shareable link.
+      </p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+:root {
+  --bg: #f4efe6;
+  --surface: rgba(255, 250, 242, 0.8);
+  --surface-strong: #bbada0;
+  --text: #3d342d;
+  --muted: #776e65;
+  --accent: #c8553d;
+  --tile-empty: rgba(238, 228, 218, 0.35);
+  --shadow: 0 24px 60px rgba(126, 87, 56, 0.16);
+  --radius: 28px;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.85), transparent 35%),
+    linear-gradient(135deg, #f7f1e8 0%, #eadcc8 100%);
+}
+
+.app {
+  width: min(100%, 560px);
+  padding: 28px;
+  border-radius: 36px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero,
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero {
+  margin-bottom: 20px;
+}
+
+.eyebrow,
+.subtitle,
+.status,
+.score-label {
+  margin: 0;
+  color: var(--muted);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.subtitle {
+  margin-top: 10px;
+  max-width: 28ch;
+  line-height: 1.4;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 12px;
+}
+
+.score-card {
+  min-width: 92px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  text-align: center;
+  background: #fff6eb;
+}
+
+.score-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.7rem;
+}
+
+.controls {
+  margin-bottom: 18px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #d66a4f, var(--accent));
+  box-shadow: 0 10px 24px rgba(200, 85, 61, 0.28);
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(200, 85, 61, 0.32);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.status {
+  text-align: right;
+  max-width: 26ch;
+  line-height: 1.4;
+}
+
+.board-shell {
+  position: relative;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--surface-strong);
+  touch-action: none;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: var(--tile-empty);
+  color: var(--text);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  user-select: none;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.cell[data-value="0"] {
+  color: transparent;
+}
+
+.cell[data-value="2"] { background: #eee4da; }
+.cell[data-value="4"] { background: #ede0c8; }
+.cell[data-value="8"] { background: #f2b179; color: #fffaf4; }
+.cell[data-value="16"] { background: #f59563; color: #fffaf4; }
+.cell[data-value="32"] { background: #f67c5f; color: #fffaf4; }
+.cell[data-value="64"] { background: #f65e3b; color: #fffaf4; }
+.cell[data-value="128"] { background: #edcf72; color: #fffaf4; font-size: clamp(1.3rem, 5vw, 1.9rem); }
+.cell[data-value="256"] { background: #edcc61; color: #fffaf4; font-size: clamp(1.3rem, 5vw, 1.9rem); }
+.cell[data-value="512"] { background: #edc850; color: #fffaf4; font-size: clamp(1.3rem, 5vw, 1.9rem); }
+.cell[data-value="1024"] { background: #edc53f; color: #fffaf4; font-size: clamp(1.05rem, 4.2vw, 1.5rem); }
+.cell[data-value="2048"] { background: #edc22e; color: #fffaf4; font-size: clamp(1.05rem, 4.2vw, 1.5rem); }
+.cell[data-value="4096"],
+.cell[data-value="8192"] {
+  background: #3c3a32;
+  color: #fffaf4;
+  font-size: clamp(1rem, 3.8vw, 1.25rem);
+}
+
+.cell.pop {
+  transform: scale(1.04);
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 14px;
+  }
+
+  .app {
+    padding: 20px;
+    border-radius: 28px;
+  }
+
+  .hero,
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subtitle,
+  .status {
+    max-width: none;
+  }
+
+  .scoreboard {
+    justify-content: space-between;
+  }
+
+  .status {
+    text-align: left;
+  }
+}

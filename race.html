@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Sprint</title>
+    <link rel="stylesheet" href="race.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="intro">
+        <p class="eyebrow">Arcade racer</p>
+        <h1>Neon Sprint</h1>
+        <p class="subtitle">
+          Dodge traffic, survive longer, and chase a new high score.
+        </p>
+      </section>
+
+      <section class="hud">
+        <div class="stat">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <span>Best</span>
+          <strong id="best-score">0</strong>
+        </div>
+        <div class="stat">
+          <span>Speed</span>
+          <strong id="speed">1.0x</strong>
+        </div>
+      </section>
+
+      <section class="stage">
+        <canvas
+          id="game"
+          width="420"
+          height="720"
+          aria-label="Car racing game"
+        ></canvas>
+        <div class="overlay" id="overlay">
+          <div class="panel">
+            <h2 id="overlay-title">Ready to race?</h2>
+            <p id="overlay-message">
+              Use left and right arrows or A and D to switch lanes.
+            </p>
+            <button id="start-button" type="button">Start Race</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="restart-button" type="button">Restart</button>
+        <p class="tips">Controls: `Left` `Right` `A` `D` or tap the left/right half of the road.</p>
+      </section>
+    </main>
+
+    <script src="race.js"></script>
+  </body>
+</html>
