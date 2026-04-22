@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wuziqi</title>
+    <link rel="stylesheet" href="wuziqi.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Strategy board</p>
+          <h1>Wuziqi</h1>
+          <p class="subtitle">
+            Place five stones in a row before the computer does. Click or tap
+            any intersection to play.
+          </p>
+        </div>
+        <div class="scoreboard">
+          <div class="score-card">
+            <span class="score-label">You</span>
+            <strong id="player-wins">0</strong>
+          </div>
+          <div class="score-card">
+            <span class="score-label">Computer</span>
+            <strong id="cpu-wins">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="new-game" type="button">New Round</button>
+        <p id="status" class="status" aria-live="polite">
+          Your turn. Place a black stone.
+        </p>
+      </section>
+
+      <section class="board-shell">
+        <canvas
+          id="board"
+          width="720"
+          height="720"
+          aria-label="Wuziqi game board"
+        ></canvas>
+      </section>
+    </main>
+
+    <script src="wuziqi.js"></script>
+  </body>
+</html>
