@@ -77,7 +77,7 @@
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
       }
 
@@ -97,6 +97,12 @@
       .card-race {
         background:
           linear-gradient(145deg, rgba(88, 246, 255, 0.14), rgba(77, 97, 255, 0.08)),
+          rgba(255, 255, 255, 0.06);
+      }
+
+      .card-wuziqi {
+        background:
+          linear-gradient(145deg, rgba(226, 190, 112, 0.18), rgba(157, 110, 55, 0.08)),
           rgba(255, 255, 255, 0.06);
       }
 
@@ -143,6 +149,10 @@
         background: linear-gradient(135deg, #ffd29c, #ff8a5b);
       }
 
+      .card-wuziqi a.button {
+        background: linear-gradient(135deg, #f1d18a, #c27b3d);
+      }
+
       .note {
         margin-top: 22px;
         color: var(--muted);
@@ -167,7 +177,8 @@
         <h1>Pick a game and play instantly</h1>
         <p class="summary">
           This page is the one you share. Friends can open it in any browser and
-          jump straight into either a puzzle challenge or an arcade race.
+          jump straight into a puzzle challenge, an arcade race, or a strategy
+          board game.
         </p>
       </section>
 
@@ -193,6 +204,18 @@
           </p>
           <div class="actions">
             <a class="button" href="race.html">Play Neon Sprint</a>
+          </div>
+        </article>
+
+        <article class="card card-wuziqi">
+          <span class="tag">Strategy</span>
+          <h2>Wuziqi</h2>
+          <p>
+            Take turns placing stones on the board and connect five in a row
+            before the computer blocks your line.
+          </p>
+          <div class="actions">
+            <a class="button" href="wuziqi.html">Play Wuziqi</a>
           </div>
         </article>
       </section>
